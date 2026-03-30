@@ -32,6 +32,9 @@ jobs:
         python -m pip show setuptools
         python -m pip show flake8-isort
         python -m pip list
+        python -m pip show flake8 flake8-isort setuptools
+        python -m pip list
+        python -c "import pkg_resources; print('pkg_resources OK')"
 
         
         
