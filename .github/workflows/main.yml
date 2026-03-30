@@ -25,6 +25,11 @@ jobs:
     # устанавливаем зависимости проекта
     - name: Install dependencies
       run: |
+        which python
+        python -V
+        python -m pip --version
+        python -m pip show setuptools || true
+        python -c "import sys, importlib; print('exec:', sys.executable); print('pkg_resources spec:', importlib.util.find_spec('pkg_resources'))"
         sudo apt-get update
         sudo apt-get install -y build-essential libpq-dev
         python -m pip install --upgrade pip setuptools wheel
