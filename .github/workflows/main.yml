@@ -32,6 +32,7 @@ jobs:
         python -m pip show setuptools
         python -m pip show flake8-isort
         python -m pip list
+
         
         
         
@@ -47,4 +48,8 @@ jobs:
     - name: Test with flake8
       # Вызываем flake8 и указываем ему,
       # что нужно проверить файлы только в папке backend/
-      run: python -m flake8 backend/
+      run: |
+        python -m pip show flake8 flake8-isort setuptools
+        python -m pip list
+        python -c "import pkg_resources; print('pkg_resources OK')"
+        python -m flake8 backend/
