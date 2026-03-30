@@ -29,8 +29,8 @@ jobs:
         sudo apt-get install -y libpq-dev build-essential
         python -V
         python -m pip install --upgrade pip setuptools wheel
-        pip install setuptools
-        pip install flake8==6.0.0 flake8-isort==6.0.0
+        python -m pip install setuptools
+        python -m pip install flake8==6.0.0 flake8-isort==6.0.0
         python -m pip install -r backend/requirements.txt
         python -m pip show setuptools
         python -m pip list
