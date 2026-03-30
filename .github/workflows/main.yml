@@ -25,15 +25,17 @@ jobs:
     # устанавливаем зависимости проекта
     - name: Install dependencies
       run: |
-        sudo apt-get update
-        sudo apt-get install -y libpq-dev build-essential
-        python -V
-        python -m pip install --upgrade pip setuptools wheel
-        python -m pip install setuptools
-        python -m pip install flake8==6.0.0 flake8-isort==6.0.0
-        python -m pip install -r backend/requirements.txt
-        python -m pip show setuptools
-        python -m pip list
+        python -m pip install --upgrade pip
+        pip install setuptools
+        pip install -r requirements.lint.txt
+      # sudo apt-get update
+      # sudo apt-get install -y libpq-dev build-essential
+      # python -V
+      # python -m pip install --upgrade pip setuptools wheel
+      # python -m pip install flake8==6.0.0 flake8-isort==6.0.0
+      # python -m pip install -r backend/requirements.txt
+      # python -m pip show setuptools
+      # python -m pip list
     # Запускаем flake8
     - name: Test with flake8
       # Вызываем flake8 и указываем ему,
